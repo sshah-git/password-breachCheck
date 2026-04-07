@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <title>Password Safety Checker</title>
+  <script src="https://cdn.jsdelivr.net/npm/zxcvbn@4.4.2/dist/zxcvbn.js"></script>
+ 
+</head>
+<body>
+  
+    <h1>🔐 Password Safety Checker</h1>
+    <p>Enter your password to check its strength and whether it's been found in a data breach.</p>
+
+  <form method="POST">
+    <div class="section">
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <div id="strength-bar-container">
+        <div id="strength-bar"></div>
+      </div>
+
+      <p id="strength-feedback"></p>
+    </div>
+
+    <button type="submit">Check for Breach</button>
+  </form>
+
+ {% if result %}
+  <p class="result">{{ result }}</p>
+{% endif %}
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const feedback = document.getElementById('strength-feedback');
+    const strengthBar = document.getElementById('strength-bar');
+
+    passwordInput.addEventListener('input', function () {
+      const result = zxcvbn(passwordInput.value);
+      const score = result.score;
+      const suggestions = result.feedback.suggestions.join(' ');
+
+      let message = '';
+      switch (score) {
+        case 0: message = 'Very weak 🔴'; break;
+        case 1: message = 'Weak 🟠'; break;
+        case 2: message = 'Fair 🟡'; break;
+        case 3: message = 'Strong 🟢'; break;
+        case 4: message = 'Very strong 🟢💪'; break;
+      }
+
+      feedback.innerHTML = `<strong>Strength:</strong> ${message}<br>${suggestions}`;
+      const widths = ['5%', '25%', '50%', '75%', '100%'];
+      const colors = ['#ff4d4d', '#ff884d', '#ffcc00', '#99cc00', '#00cc66'];
+
+      strengthBar.style.width = widths[score];
+      strengthBar.style.backgroundColor = colors[score];
+    });
+
+  
+</script>
+
+
+</body>
+</html>
