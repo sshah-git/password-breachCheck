@@ -38,3 +38,18 @@ Security: SHA-1 hashing (hashlib)
 API: Have I Been Pwned (Pwned Passwords API)
 HTTP Requests: requests
 
+
+⚙️ Installation & Setup
+1. Clone the repo
+git clone https://github.com/your-username/password-breach-checker.git
+cd password-breach-checker
+2. Create a virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+3. Install dependencies
+pip install flask requests
+4. Run the app
+python app.py
+5. Open in browser
+http://127.0.0.1:5000/
