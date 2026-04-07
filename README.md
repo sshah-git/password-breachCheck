@@ -53,3 +53,30 @@ pip install flask requests
 python app.py
 5. Open in browser
 http://127.0.0.1:5000/
+
+🔍 Example Output
+⚠️ WARNING: This password has appeared 1,234,567 times in data breaches
+✅ Good news! This password has not been found in known breaches
+🔐 Security Notes
+Passwords are never stored
+Full hashes are never sent externally
+Uses k-anonymity to protect user data
+Relies on a trusted public breach database
+💡 Future Improvements
+Add password strength analysis (entropy, patterns)
+Implement rate limiting / caching
+Improve UI/UX (React frontend 👀)
+Add dark mode (because obviously)
+Deploy to cloud (Render / AWS / Vercel)
+📌 Why This Project Matters
+
+With billions of leaked credentials online, password reuse is one of the biggest security risks. This project demonstrates:
+
+Real-world API integration
+Secure system design principles
+Practical cybersecurity awareness
+👤 Author
+
+Sana Shah
+Computer Science Student
+Interested in healthcare, cybersecurity, and building impactful tech
