@@ -24,3 +24,17 @@ Prefix (first 5 chars) → sent to API
 Suffix (remaining chars) → kept locally
 API returns a list of matching hash suffixes
 App checks if the suffix exists → returns breach count
+
+✨ Features
+
+🔒 Privacy-first password checking (k-anonymity)
+⚡ Fast API-based lookup
+🌐 Simple Flask web interface
+📊 Returns how many times a password has been seen in breaches
+✅ Clear user feedback (safe vs compromised)
+🛠️ Tech Stack
+Backend: Python, Flask
+Security: SHA-1 hashing (hashlib)
+API: Have I Been Pwned (Pwned Passwords API)
+HTTP Requests: requests
+
