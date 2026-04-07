@@ -14,3 +14,13 @@ Sends only the first 5 characters of the hash to the API
 Compares the remaining hash locally
 
 This ensures privacy while still leveraging a massive breach database.
+
+🧠 How It Works
+
+User inputs a password
+Password is hashed using SHA-1
+Hash is split into:
+Prefix (first 5 chars) → sent to API
+Suffix (remaining chars) → kept locally
+API returns a list of matching hash suffixes
+App checks if the suffix exists → returns breach count
